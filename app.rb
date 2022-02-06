@@ -10,13 +10,11 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     $player_1 = Player.new(params[:player_1_name])
-    $player_2 = Player.new(params[:player_2_name])
     redirect '/play'
   end 
 
   get '/play' do
     @name1 = $player_1.name
-    @name2 = $player_2.name
     erb :play
   end 
 
